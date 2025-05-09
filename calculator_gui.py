@@ -20,7 +20,7 @@ def on_click(event):
         entry.insert(tk.END, text)
 
 root = tk.Tk()
-root.title("Simple GUI Calculator")
+root.title("Python GUI Calculator")
 
 entry = tk.Entry(root, font="Arial 20", bd=10, relief=tk.SUNKEN, justify=tk.RIGHT)
 entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
@@ -34,7 +34,7 @@ buttons = [
 
 row, col = 1, 0
 for b in buttons:
-    btn = tk.Button(root, text=b, font="Arial 18", padx=20, pady=20)
+    btn = tk.Button(root, text=b, font="Arial 18", padx=20, pady=22)
     btn.grid(row=row, column=col, sticky="nsew")
     btn.bind("<Button-1>", on_click)
     col += 1
@@ -42,8 +42,8 @@ for b in buttons:
         col = 0
         row += 1
 
-for i in range(5):
-    root.grid_rowconfigure(i, weight=1)
-    root.grid_columnconfigure(i % 4, weight=1)
+for iter in range(5):
+    root.grid_rowconfigure(iter, weight=1)
+    root.grid_columnconfigure(iter % 4, weight=1)
 
 root.mainloop()
